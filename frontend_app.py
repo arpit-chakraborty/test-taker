@@ -41,11 +41,11 @@ if str(CURRENT_DIR) not in sys.path:
 from parse_pdf import parse_pdf_questions
 
 
-# Directory paths required by the pipeline
-TEMP_DIR = Path("temp")
-IMAGE_DIR = Path("temp/image")
-JSON_OUTPUT_PATH = Path("parsed_questions.json")
-TEMP_JSON_COPY_PATH = TEMP_DIR / "parsed_questions.json"
+BASE_STORAGE_DIR = Path("/tmp") if os.environ.get("VERCEL") else Path(".")
+TEMP_DIR = BASE_STORAGE_DIR / "temp"
+IMAGE_DIR = TEMP_DIR / "image"
+JSON_OUTPUT_PATH = TEMP_DIR / "parsed_questions.json"
+TEMP_JSON_COPY_PATH = TEMP_DIR / "parsed_questions_copy.json"
 UPLOADED_PDF_PATH = TEMP_DIR / "uploaded_question_paper.pdf"
 
 
