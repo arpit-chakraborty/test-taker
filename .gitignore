@@ -1,0 +1,31 @@
+# Python bytecode and caches
+__pycache__/
+*.py[oc]
+*$py.class
+
+# Build and distribution artifacts
+build/
+dist/
+wheels/
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Testing and type checking caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# OS and IDE files
+.DS_Store
+.vscode/
+.idea/

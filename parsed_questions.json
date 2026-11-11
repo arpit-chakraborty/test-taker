@@ -1,0 +1,289 @@
+[
+  {
+    "Question": "THIS IS QUESTION PAPER FOR THE SUBJECT \"DEGREE LEVEL : DEEP LEARNING PRACTICE (COMPUTER BASED EXAM)\" ARE YOU SURE YOU HAVE TO WRITE EXAM FOR THIS SUBJECT? CROSS CHECK YOUR HALL TICKET TO CONFIRM THE SUBJECTS TO BE WRITTEN. (IF IT IS NOT THE CORRECT SUBJECT, PLS CHECK THE SECTION AT THE TOP FOR THE SUBJECTS REGISTERED BY YOU)",
+    "Answer": [
+      "Yes",
+      "No"
+    ],
+    "Correct answer": "Yes",
+    "Answer type": "MCQ",
+    "Image": null,
+    "Image location": null
+  },
+  {
+    "Question": "Consider subword tokenization methods such as Byte Pair Encoding (BPE) and WordPiece as employed in transformer-based language modeling pipelines. Which of the following statements correctly describes their fundamental properties?",
+    "Answer": [
+      "They always split words at true morpheme boundaries (the smallest units of meaning, e.g., “un-” + “break” + “able”).",
+      "They learn merge rules from corpus statistics (frequency/likelihood), not token semantics",
+      "They eliminate (Out Of Vocabulary) OOV by ensuring every word is a single token",
+      "They generalize perfectly to out-of-domain text without increasing sequence length."
+    ],
+    "Correct answer": "They learn merge rules from corpus statistics (frequency/likelihood), not token semantics",
+    "Answer type": "MCQ",
+    "Image": null,
+    "Image location": null
+  },
+  {
+    "Question": "Consider two subword tokenizers trained on the same text corpus. Tokenizer A uses a vocabulary of 8,000 tokens, whereas Tokenizer B uses a vocabulary of 64,000 tokens. Which of the following statements most accurately characterizes the implications of these vocabulary sizes for training efficiency in transformer-based language models?",
+    "Answer": [
+      "Larger vocabulary always reduces sequence length and total compute.",
+      "Smaller vocabulary always improves semantic alignment.",
+      "Larger vocabulary reduces sequence length but increases embedding parameters.",
+      "Vocabulary size has no effect once model is pretrained."
+    ],
+    "Correct answer": "Larger vocabulary reduces sequence length but increases embedding parameters.",
+    "Answer type": "MCQ",
+    "Image": null,
+    "Image location": null
+  },
+  {
+    "Question": "A subword tokenizer decomposes rare chemical entity names into a large number of fragments. During downstream fine-tuning, the model exhibits degraded performance on a chemical named entity recognition (NER) task. Which of the following represents the most principled corrective action?",
+    "Answer": [
+      "Increase the dropout rate during fine-tuning.",
+      "Retrain the tokenizer using an in-domain (chemical) corpus.",
+      "Reduce the batch size during training.",
+      "Apply label smoothing to the loss function."
+    ],
+    "Correct answer": "Retrain the tokenizer using an in-domain (chemical) corpus.",
+    "Answer type": "MCQ",
+    "Image": null,
+    "Image location": null
+  },
+  {
+    "Question": "[IMAGE: temp/image/q5_img1.jpg]",
+    "Answer": [
+      "The output sequence will always contain exactly 12 non-padding tokens.",
+      "Special tokens may consume a portion of the 12-token length budget.",
+      "Word boundaries are preserved, since truncation occurs at whitespace boundaries.",
+      "Padding will never be applied when truncation is enabled."
+    ],
+    "Correct answer": "Special tokens may consume a portion of the 12-token length budget.",
+    "Answer type": "MCQ",
+    "Image": "temp/image/q5_img1.jpg",
+    "Image location": 0
+  },
+  {
+    "Question": "[IMAGE: temp/image/q6_img1.jpg]",
+    "Answer": [
+      "This is supervised fine-tuning with noisy labels.",
+      "This is instruction tuning because labels are present.",
+      "This performs continual pretraining with MLM objective.",
+      "This trains a classifier head implicitly."
+    ],
+    "Correct answer": "This performs continual pretraining with MLM objective.",
+    "Answer type": "MCQ",
+    "Image": "temp/image/q6_img1.jpg",
+    "Image location": 0
+  },
+  {
+    "Question": "In the standard Transformer architecture (e.g., GPT or BERT), which component exhibits a computational complexity that scales quadratically ( [IMAGE: temp/image/q7_img1.png] ) with respect to the input sequence length [IMAGE: temp/image/q7_img2.png] ?",
+    "Answer": [
+      "The initial token and positional embedding lookup.",
+      "The element-wise addition in the Residual (Skip) connections.",
+      "The computation of the attention score matrix ( [IMAGE: temp/image/q7_img3.png] ).",
+      "The linear projections in the Position-wise Feed-Forward Network (FFN)."
+    ],
+    "Correct answer": "The computation of the attention score matrix ( [IMAGE: temp/image/q7_img3.png] ).",
+    "Answer type": "MCQ",
+    "Image": [
+      "temp/image/q7_img1.png",
+      "temp/image/q7_img2.png",
+      "temp/image/q7_img3.png"
+    ],
+    "Image location": [
+      1,
+      1,
+      2
+    ]
+  },
+  {
+    "Question": "A model with 4B parameters (fp32) is being trained using the AdamW optimizer on a single 32GB GPU. Why is full fine-tuning impossible in this configuration?",
+    "Answer": [
+      "The 4B parameters alone require 32GB of VRAM, leaving no room for the OS or CUDA kernels.",
+      "The optimizer states (32GB) plus the model weights (16GB) and gradients (16GB) exceed the 32GB VRAM limit.",
+      "The tokenizer is unable to map a context length of 2048 to a 32-bit integer space.",
+      "The fp32 precision requires 8 bytes per parameter, meaning the 4B model needs 64GB just to load."
+    ],
+    "Correct answer": "The optimizer states (32GB) plus the model weights (16GB) and gradients (16GB) exceed the 32GB VRAM limit.",
+    "Answer type": "MCQ",
+    "Image": null,
+    "Image location": null
+  },
+  {
+    "Question": "During the full fine-tuning of a Large Language Model, you aim to regularize the training process by penalizing the growth of weight magnitudes. This ensures the model does not overfit the fine- tuning data by making excessively large updates to the pretrained parameters. Which parameter is specifically designed to apply this penalty?",
+    "Answer": [
+      "Gradient Accumulation.",
+      "Batch Size.",
+      "Checkpointing.",
+      "Weight Decay."
+    ],
+    "Correct answer": "Weight Decay.",
+    "Answer type": "MCQ",
+    "Image": null,
+    "Image location": null
+  },
+  {
+    "Question": "Why does full fine-tuning of large language models often require more memory than inference using the same model?",
+    "Answer": [
+      "Inference uses larger batch sizes.",
+      "Inference stores optimizer states.",
+      "Training requires storing gradients and optimizer states.",
+      "Training uses longer input sequences."
+    ],
+    "Correct answer": "Training requires storing gradients and optimizer states.",
+    "Answer type": "MCQ",
+    "Image": null,
+    "Image location": null
+  },
+  {
+    "Question": "Which technique is most effective at reducing GPU memory usage during training without modifying the model architecture?",
+    "Answer": [
+      "Gradient clipping.",
+      "Mixed-precision training.",
+      "Increasing learning rate warmup.",
+      "Saving checkpoints less frequently."
+    ],
+    "Correct answer": "Mixed-precision training.",
+    "Answer type": "MCQ",
+    "Image": null,
+    "Image location": null
+  },
+  {
+    "Question": "Consider the output of a Hugging Face tokenizer when applied to a batch of sequences with padding= \"max_length\" and return_tensors= \"pt\". Which of the following statements are correct? (Select ALL that apply)",
+    "Answer": [
+      "The input_ids tensor contains the numerical indices mapped from the vocabulary.",
+      "The attention_mask contains 0s for padding tokens and 1s for real tokens to prevent the model from attending to padding.",
+      "The token_type_ids (if present) are used primarily to distinguish between uppercase and lowercase letters.",
+      "In models like BERT, the input_ids will typically begin with a special token index (e.g., [CLS])."
+    ],
+    "Correct answer": [
+      "The input_ids tensor contains the numerical indices mapped from the vocabulary.",
+      "The attention_mask contains 0s for padding tokens and 1s for real tokens to prevent the model from attending to padding.",
+      "In models like BERT, the input_ids will typically begin with a special token index (e.g., [CLS])."
+    ],
+    "Answer type": "multichoice",
+    "Image": null,
+    "Image location": null
+  },
+  {
+    "Question": "[IMAGE: temp/image/q13_img1.jpg]",
+    "Answer": [
+      "Effective batch size is larger than 1.",
+      "Reduced memory usage compared to FP32 training.",
+      "Gradient clipping limits large parameter updates.",
+      "Gradient accumulation reduces the number of optimizer states."
+    ],
+    "Correct answer": [
+      "Effective batch size is larger than 1.",
+      "Reduced memory usage compared to FP32 training.",
+      "Gradient clipping limits large parameter updates."
+    ],
+    "Answer type": "multichoice",
+    "Image": "temp/image/q13_img1.jpg",
+    "Image location": 0
+  },
+  {
+    "Question": "Which of the following statements correctly distinguish different Transformer architectures and their typical training objectives? (Select ALL that apply)",
+    "Answer": [
+      "Encoder-only models are commonly trained with Masked Language Modeling objectives.",
+      "Decoder-only models rely on causal masking and autoregressive inference.",
+      "Encoder-decoder models are well suited for sequence-to-sequence tasks.",
+      "All Transformer architectures use identical attention masks."
+    ],
+    "Correct answer": [
+      "Encoder-only models are commonly trained with Masked Language Modeling objectives.",
+      "Decoder-only models rely on causal masking and autoregressive inference.",
+      "Encoder-decoder models are well suited for sequence-to-sequence tasks."
+    ],
+    "Answer type": "multichoice",
+    "Image": null,
+    "Image location": null
+  },
+  {
+    "Question": "[IMAGE: temp/image/q15_img1.jpg]",
+    "Answer": [
+      "Task Conditioning: The model learns to follow natural language formatting (Instruction/Input/Answer) rather than just mapping a sequence to a single integer ID.",
+      "Open Vocabulary: The model's prediction head remains the size of its full vocabulary (e.g., 50k+ tokens), allowing it to generate any string as an answer instead of being restricted to fixed logits for [IMAGE: temp/image/q15_img2.png] classes.",
+      "Guaranteed Zero-Shot: This training format ensures the model will generalize perfectly to any unseen task prompt without further data.",
+      "Objective Shift: The training objective moves from minimizing cross-entropy loss over a discrete class index to minimizing next-token prediction loss over the sequence tokens."
+    ],
+    "Correct answer": [
+      "Task Conditioning: The model learns to follow natural language formatting (Instruction/Input/Answer) rather than just mapping a sequence to a single integer ID.",
+      "Open Vocabulary: The model's prediction head remains the size of its full vocabulary (e.g., 50k+ tokens), allowing it to generate any string as an answer instead of being restricted to fixed logits for [IMAGE: temp/image/q15_img2.png] classes.",
+      "Objective Shift: The training objective moves from minimizing cross-entropy loss over a discrete class index to minimizing next-token prediction loss over the sequence tokens."
+    ],
+    "Answer type": "multichoice",
+    "Image": [
+      "temp/image/q15_img1.jpg",
+      "temp/image/q15_img2.png"
+    ],
+    "Image location": [
+      0,
+      2
+    ]
+  },
+  {
+    "Question": "A model is trained using the Causal Language Modeling (CLM) objective with a standard cross- entropy loss. Which of the following statements correctly describe the training dynamics? (Select ALL that apply)",
+    "Answer": [
+      "The loss at position [IMAGE: temp/image/q16_img1.png] depends only on tokens [IMAGE: temp/image/q16_img2.png] .",
+      "The attention mask is strictly upper triangular.",
+      "Future tokens contribute gradients to earlier positions.",
+      "The joint probability of the sequence is factorized autoregressively."
+    ],
+    "Correct answer": [
+      "The loss at position [IMAGE: temp/image/q16_img1.png] depends only on tokens [IMAGE: temp/image/q16_img2.png] .",
+      "The attention mask is strictly upper triangular.",
+      "The joint probability of the sequence is factorized autoregressively."
+    ],
+    "Answer type": "multichoice",
+    "Image": [
+      "temp/image/q16_img1.png",
+      "temp/image/q16_img2.png"
+    ],
+    "Image location": [
+      2,
+      2
+    ]
+  },
+  {
+    "Question": "When configuring TrainingArguments for a Transformer model, we include a learning rate warmup phase (e.g., warmup_steps=500). Which of the following statements correctly describe the purpose and behavior of this strategy? (Select ALL that apply)",
+    "Answer": [
+      "It involves linearly increasing the learning rate from 0 (or a small value) to the target maximum during the initial phase.",
+      "It helps prevent \"divergence'' or instability caused by large gradients when the model weights are far from their optimal state.",
+      "It significantly reduces the VRAM (memory) required to store optimizer states.",
+      "After the warmup phase, the learning rate typically follows a decay schedule (like linear or cosine) to ensure convergence."
+    ],
+    "Correct answer": [
+      "It involves linearly increasing the learning rate from 0 (or a small value) to the target maximum during the initial phase.",
+      "It helps prevent \"divergence'' or instability caused by large gradients when the model weights are far from their optimal state.",
+      "After the warmup phase, the learning rate typically follows a decay schedule (like linear or cosine) to ensure convergence."
+    ],
+    "Answer type": "multichoice",
+    "Image": null,
+    "Image location": null
+  },
+  {
+    "Question": "A transformer-based language model has 1.2 billion parameters and is fine-tuned using AdamW. Assume parameters, gradients, and optimizer states (first and second moments) are all stored in 32-bit precision (4 bytes each). Ignoring activations and buffers, calculate the total GPU memory required (in GB) to store parameters, gradients, and optimizer states. (Assume 1 GB = [IMAGE: temp/image/q18_img1.png] bytes.)",
+    "Answer": null,
+    "Correct answer": "19.1 to 19.3",
+    "Answer type": "numeric",
+    "Image": "temp/image/q18_img1.png",
+    "Image location": 1
+  },
+  {
+    "Question": "A GPT-style transformer block has an embedding dimension of 768 and uses 12 attention heads. Consider a specific processing task with a very short sequence of only 3 tokens ( [IMAGE: temp/image/q19_img1.png] ).Compute the total number of weight parameters (ignore biases) in the self-attention module, specifically for the Query, Key, Value, and Output projection matrices. Report your answer in millions, rounded to one decimal place.",
+    "Answer": null,
+    "Correct answer": "2.3 to 2.5",
+    "Answer type": "numeric",
+    "Image": "temp/image/q19_img1.png",
+    "Image location": 1
+  },
+  {
+    "Question": "You are training a decoder-only language model with a vocabulary size of 32,000, maximum context length of 2048, and embedding dimension of 1024. The model uses learned positional embeddings. Calculate the total number of parameters in the embedding layer (token + positional embeddings). Report your answer in millions, rounded to one decimal place.",
+    "Answer": null,
+    "Correct answer": "34.7 to 35.1",
+    "Answer type": "numeric",
+    "Image": null,
+    "Image location": null
+  }
+]
